@@ -1,3 +1,9 @@
+$("#year").keyup(function(event){
+    if(event.keyCode === 13){
+        leapYear.check();
+    }
+});
+
 const leapYear = {
 
     ajaxMethod: 'POST',

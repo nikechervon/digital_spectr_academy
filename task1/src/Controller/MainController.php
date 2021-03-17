@@ -27,7 +27,7 @@ class MainController
     {
         $year = htmlspecialchars($_POST['year']);
 
-        if (!preg_match("/[0-9]/", $year) || empty($year)) {
+        if (preg_match("/[\D]/", $year) || empty($year)) {
             echo 0;
         } elseif (!self::isLeapYear((int) $year)) {
             echo 1;
