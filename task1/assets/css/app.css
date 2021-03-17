@@ -1,0 +1,22 @@
+body {
+    margin-top: 50px;
+}
+
+.container {
+    margin: 0 20px;
+}
+
+.container .form-body {
+    margin-bottom: 15px;
+}
+
+.container .response-message {
+    color: blue;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit, sans-serif;
+}
+
+.container .error {
+    color: red;
+}
