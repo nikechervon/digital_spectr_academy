@@ -8,12 +8,12 @@ namespace App\Constants;
  */
 final class ResponseConstants
 {
-    // Response code if prefix field is empty
+    // Код ответа, если поле префикса пусто
     const PREFIX_INPUT_ERROR_RESPONSE_CODE = 1001;
 
-    // Response code if words field is empty
+    // Код ответа, если поле для слов пусто
     const WORDS_INPUT_ERROR_RESPONSE_CODE = 1002;
 
-    // Response code if all fields is not empty
+    // Код ответа, если все поля заполнены
     const GET_WORDS_RESPONSE_CODE = 1003;
 }

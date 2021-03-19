@@ -9,7 +9,7 @@ namespace App;
 class JsonResponse
 {
     /**
-     * Render json
+     * Возвращает данные в формате JSON
      * @param $result
      * @param $data
      * @param int $status

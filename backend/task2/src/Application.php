@@ -25,7 +25,7 @@ class Application
     }
 
     /**
-     * Run application
+     * Запуск приложения
      * @return void
      */
     public function run(): void

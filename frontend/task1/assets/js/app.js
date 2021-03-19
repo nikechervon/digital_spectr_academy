@@ -13,7 +13,7 @@ const leapYear = {
         if ($('.response-message').length) {
             $('.response-message').text(message);
         } else {
-            $('.form-body').after('Response:&nbsp; <span class="response-message">' + message + '</span>');
+            $('.form-body').after('Ответ:&nbsp; <span class="response-message">' + message + '</span>');
         }
 
         if (isError) {
@@ -42,15 +42,15 @@ const leapYear = {
 
                 switch (obj.result) {
                     case 1001:
-                        leapYear.showMessage('Input error', true);
+                        leapYear.showMessage('Ошибка введенных данных', true);
                         break;
 
                     case 1002:
-                        leapYear.showMessage('The entered year is a leap year');
+                        leapYear.showMessage('Введенный год - високосный');
                         break;
 
                     case 1003:
-                        leapYear.showMessage('The entered year is not a leap year');
+                        leapYear.showMessage('Введенный год - невисокосный');
                         break;
                 }
 

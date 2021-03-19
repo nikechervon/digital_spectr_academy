@@ -7,29 +7,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-    <!-- My CSS file -->
+    <!-- Мой CSS файл -->
     <link rel="stylesheet" href="assets/css/app.css">
 
-    <title>Leap year</title>
+    <title>Високосный год</title>
 </head>
 <body>
 
     <div class="container">
+        <h2>Введите год и узнайте, високосный он или нет:</h2>
 
-        <h3>Enter the year and find out whether it is a leap year or not</h3>
-
-        <br><br><br>
+        <br><br>
 
         <div class="row g-3 form-body">
 
             <div class="col-auto">
-                <label for="year" class="visually-hidden">Year</label>
-                <input type="text" class="form-control" id="year" placeholder="Enter year...">
+                <label for="year" class="visually-hidden">Год</label>
+                <input type="text" class="form-control" id="year" placeholder="Введите год...">
             </div>
 
             <div class="col-auto">
                 <button class="btn btn-primary mb-3" id="submit-year" onclick="leapYear.check()">
-                    Check for Leap Year
+                    Проверить
                 </button>
             </div>
 
@@ -42,7 +41,7 @@
     <!-- Option 2: Jquery -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
 
-    <!-- Option 3: My JS file -->
+    <!-- Option 3: Мой JS файл -->
     <script src="assets/js/app.js"></script>
 
 </body>

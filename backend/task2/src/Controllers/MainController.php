@@ -12,50 +12,54 @@ use App\JsonResponse;
 class MainController
 {
     /**
-     * Searches for and returns an array of words starting with a prefix as JSON
+     * Ищет и возвращает массив слов, начинающихся с префикса, в формате JSON.
      * @return string
      */
     public function searchWordsByPrefix(): string
     {
         $prefix = htmlspecialchars(trim($_POST['prefix']));
 
+        // Проверка на пустое поле префикса
         if (empty($prefix)) {
             return JsonResponse::render(
                 ResponseConstants::PREFIX_INPUT_ERROR_RESPONSE_CODE
             );
         }
 
+        // Проверка на пустое поле для ввода слов
         if (empty($_POST['words'])) {
             return JsonResponse::render(
                 ResponseConstants::WORDS_INPUT_ERROR_RESPONSE_CODE
             );
         }
 
-        // Array of words
+        // Массив слов
         $words = explode(',', $_POST['words']);
 
-        // An array of words starting with a prefix
-        $result = $this->getWordsByPrefix($prefix, $words);
+        // Массив слов, начинающийся с префикса
+        $filteredWords = $this->getWordsByPrefix($prefix, $words);
 
         return JsonResponse::render(
             ResponseConstants::GET_WORDS_RESPONSE_CODE,
-            $result
+            $filteredWords
         );
     }
 
     /**
-     * Returns an array of words starting with a prefix
+     * Возвращает массив слов, начинающихся с префикса
      * @param string $prefix
      * @param array $words
      * @return array
      */
     private function getWordsByPrefix(string $prefix, array $words): array
     {
-        $filteredWords = array_filter($words, function ($word) use ($prefix) {
+        // Callback фильтрации
+        $callback = function ($word) use ($prefix) {
             $word = htmlspecialchars(trim($word));
             return str_starts_with($word, $prefix);
-        });
+        };
 
+        $filteredWords = array_filter($words, $callback);
         return array_values($filteredWords);
     }
 }

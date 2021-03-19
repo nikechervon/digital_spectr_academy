@@ -1,4 +1,4 @@
 <?php
 
-// Route handler (POST)
+// Роут обработчика (POST)
 $router->post('/search',  'MainController@searchWordsByPrefix');

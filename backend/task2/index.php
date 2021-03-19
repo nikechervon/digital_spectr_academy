@@ -1,12 +1,12 @@
 <?php
 
-// Require composer autoload
+// Composer autoload
 require __DIR__ . '/vendor/autoload.php';
 
 use App\Application;
 use Buki\Router\Router;
 
-// Routing params
+// Параметры роутинга
 $params = [
     'paths' => [
         'controllers' => 'src/Controllers/'
@@ -18,9 +18,9 @@ $params = [
 
 $router = new Router($params);
 
-// Routes
+// Роуты
 require __DIR__ . '/src/Routes/api.php';
 
-// Run Application
+// Запуск приложения
 $application = new Application($router);
 $application->run();

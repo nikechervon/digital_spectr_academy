@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-    <!-- My CSS file -->
+    <!-- Мой CSS файл -->
     <link rel="stylesheet" href="assets/css/app.css">
 
     <title>Leap year</title>
@@ -15,26 +15,25 @@
 <body>
 
     <div class="container">
+        <h2>Найдите все слова, начинающиеся с введенного префикса:</h2>
 
-        <h3>Find all entered words starting with the entered prefix</h3>
-
-        <br><br><br>
+        <br><br>
 
         <div class="row g-3 form-body">
 
             <div class="col-auto">
-                <label for="prefix" class="visually-hidden">Prefix</label>
-                <input type="text" class="form-control" id="prefix" placeholder="Enter prefix...">
+                <label for="prefix" class="visually-hidden">Префикс</label>
+                <input type="text" class="form-control" id="prefix" placeholder="Введите префикс...">
             </div>
 
             <div class="col-auto">
-                <label for="words" class="visually-hidden">Words</label>
-                <input type="text" class="form-control" id="words" placeholder="Enter words separated by commas...">
+                <label for="words" class="visually-hidden">Слова</label>
+                <input type="text" class="form-control" id="words" placeholder="Введите слова через запятую...">
             </div>
 
             <div class="col-auto">
                 <button class="btn btn-primary mb-3" id="submit-year" onclick="words.search()">
-                    Find words
+                    Найти
                 </button>
             </div>
 
@@ -49,7 +48,7 @@
     <!-- Option 2: Jquery -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
 
-    <!-- Option 3: My JS file -->
+    <!-- Option 3: Мой JS файл -->
     <script src="assets/js/app.js"></script>
 
 </body>

@@ -1,3 +1,15 @@
+$("#prefix").keyup(function(event){
+    if(event.keyCode === 13){
+        words.search();
+    }
+});
+
+$("#words").keyup(function(event){
+    if(event.keyCode === 13){
+        words.search();
+    }
+});
+
 const words = {
 
     ajaxMethod: 'POST',
@@ -33,29 +45,30 @@ const words = {
             success: function (json) {
 
                 var obj = jQuery.parseJSON(json);
+                wordsItems.empty();
 
                 if (obj.result === 1001) {
-                    words.showError(prefix, prefixError, 'Empty Prefix field');
+                    words.showError(prefix, prefixError, 'Пустое поле префикса');
                 } else {
                     prefixError.remove();
                 }
 
                 if (obj.result === 1002) {
-                    words.showError(wordsList, wordsError, 'Please enter at least 1 word');
+                    words.showError(wordsList, wordsError, 'Введите хотя бы 1 слово');
                 } else {
                     wordsError.remove();
                 }
 
                 if (obj.data) {
                     if (obj.data.length === 0) {
-
-                        wordsItems.empty();
-                        wordsItems.append('<li class="words__list_item">No words found</li>');
+                        wordsItems.append(
+                            '<li class="words__list_item">Слов не найдено</li>'
+                        );
                     } else {
-
-                        wordsItems.empty();
                         obj.data.forEach(
-                            word => wordsItems.append('<li class="words__list_item">' + word + '</li>')
+                            word => wordsItems.append(
+                                '<li class="words__list_item">' + word + '</li>'
+                            )
                         );
                     }
                 }
