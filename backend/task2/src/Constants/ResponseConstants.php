@@ -15,5 +15,5 @@ final class ResponseConstants
     const WORDS_INPUT_ERROR_RESPONSE_CODE = 1002;
 
     // Код ответа, если все поля заполнены
-    const GET_WORDS_RESPONSE_CODE = 1003;
+    const SUCCESS_RESPONSE_CODE = 1003;
 }

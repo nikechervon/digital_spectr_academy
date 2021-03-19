@@ -40,7 +40,7 @@ class MainController
         $filteredWords = $this->getWordsByPrefix($prefix, $words);
 
         return JsonResponse::render(
-            ResponseConstants::GET_WORDS_RESPONSE_CODE,
+            ResponseConstants::SUCCESS_RESPONSE_CODE,
             $filteredWords
         );
     }

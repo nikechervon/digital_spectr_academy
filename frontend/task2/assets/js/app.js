@@ -59,7 +59,7 @@ const words = {
                     wordsError.remove();
                 }
 
-                if (obj.data) {
+                if (obj.result === 1003) {
                     if (obj.data.length === 0) {
                         wordsItems.append(
                             '<li class="words__list_item">Слов не найдено</li>'
