@@ -48,19 +48,19 @@
 1. Клонируем проект в корневую папку доменов вашего сервера:
    
 ```shell
-    $ git clone https://github.com/izniburak/php-router.git
+$ git clone https://github.com/izniburak/php-router.git
 ```
 <br>
 
 2. Откройте git-bash из корня проекта, и запустите скрипт для установки всех необходимых библиотек:
 
 ```shell
-    $ sh ./backend/bash/build.sh
+$ sh ./backend/bash/build.sh
 ```
 <br>
 
 3. Запускайте сервер и переходите к стартовой странице:
 
 ```
-    http://digital-spectr.loc/frontend/
+http://digital-spectr.loc/frontend/
 ```
