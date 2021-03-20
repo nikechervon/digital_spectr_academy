@@ -21,28 +21,12 @@ class MainController
         $hipstersCount = htmlspecialchars($_POST['hipstersCount']);
         $smoothiesCount = htmlspecialchars($_POST['smoothiesCount']);
 
-        if (empty($hipstersCount)) {
-            return JsonResponse::render(
-                ResponseConstants::HIPSTERS_INPUT_EMPTY_RESPONSE_CODE
-            );
-        }
+        // Результат валидации
+        $resultValidate = $this->validation($hipstersCount, $smoothiesCount);
 
-        if ($this->checkStringForForbiddenCharacters($hipstersCount)) {
-            return JsonResponse::render(
-                ResponseConstants::HIPSTERS_INPUT_ERROR_RESPONSE_CODE
-            );
-        }
-
-        if (empty($smoothiesCount)) {
-            return JsonResponse::render(
-                ResponseConstants::SMOOTHIES_INPUT_EMPTY_RESPONSE_CODE
-            );
-        }
-
-        if ($this->checkStringForForbiddenCharacters($smoothiesCount)) {
-            return JsonResponse::render(
-                ResponseConstants::SMOOTHIES_INPUT_ERROR_RESPONSE_CODE
-            );
+        // Если есть ошибки, возвращаем
+        if (is_string($resultValidate)) {
+            return $resultValidate;
         }
 
         // Кол-во смузи для одного хипстера
@@ -52,6 +36,45 @@ class MainController
             ResponseConstants::SUCCESS_RESPONSE_CODE,
             $smoothiesCountForHipster
         );
+    }
+
+    /**
+     * Выполняет валидацию полей
+     * @param int $hipstersCount
+     * @param int $smoothiesCount
+     * @return string|bool
+     */
+    private function validation(int $hipstersCount, int $smoothiesCount): string|bool
+    {
+        // Если не указано кол-во хипстеров
+        if (empty($hipstersCount)) {
+            return JsonResponse::render(
+                ResponseConstants::HIPSTERS_INPUT_EMPTY_RESPONSE_CODE
+            );
+        }
+
+        // Если указаны недопустимые символы в поле хипстеров
+        if ($this->checkStringForForbiddenCharacters($hipstersCount)) {
+            return JsonResponse::render(
+                ResponseConstants::HIPSTERS_INPUT_ERROR_RESPONSE_CODE
+            );
+        }
+
+        // Если не указано кол-во смузи
+        if (empty($smoothiesCount)) {
+            return JsonResponse::render(
+                ResponseConstants::SMOOTHIES_INPUT_EMPTY_RESPONSE_CODE
+            );
+        }
+
+        // Если указаны недопустимые символы в поле смузи
+        if ($this->checkStringForForbiddenCharacters($smoothiesCount)) {
+            return JsonResponse::render(
+                ResponseConstants::SMOOTHIES_INPUT_ERROR_RESPONSE_CODE
+            );
+        }
+
+        return true;
     }
 
     /**

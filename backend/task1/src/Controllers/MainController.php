@@ -20,6 +20,26 @@ class MainController
     {
         $year = htmlspecialchars($_POST['year']);
 
+        // Результат валидации
+        $resultValidate = $this->validation($year);
+
+        // Если есть ошибки, возвращаем
+        if (is_string($resultValidate)) {
+            return $resultValidate;
+        }
+
+        return JsonResponse::render(
+            ResponseConstants::LEAP_YEAR_RESPONSE_CODE
+        );
+    }
+
+    /**
+     * Выполняет валидацию полей
+     * @param $year
+     * @return string|bool
+     */
+    private function validation($year): string|bool
+    {
         // Проверка, что строка состоит только из цифр
         if (preg_match("/[\D]/", $year) || empty($year)) {
             return JsonResponse::render(
@@ -34,9 +54,7 @@ class MainController
             );
         }
 
-        return JsonResponse::render(
-            ResponseConstants::LEAP_YEAR_RESPONSE_CODE
-        );
+        return true;
     }
 
     #[Pure]
@@ -47,11 +65,8 @@ class MainController
      */
     private function isLeapYear(int $year): bool
     {
-        $isLeapYear = date(
-            "L",
-            mktime(0, 0, 0, 7, 7, $year)
+        return (bool) date(
+            "L", mktime(0, 0, 0, 7, 7, $year)
         );
-
-        return (bool) $isLeapYear;
     }
 }

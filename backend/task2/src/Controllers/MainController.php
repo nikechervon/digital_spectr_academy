@@ -19,18 +19,12 @@ class MainController
     {
         $prefix = htmlspecialchars(trim($_POST['prefix']));
 
-        // Проверка на пустое поле префикса
-        if (empty($prefix)) {
-            return JsonResponse::render(
-                ResponseConstants::PREFIX_INPUT_ERROR_RESPONSE_CODE
-            );
-        }
+        // Результат валидации
+        $resultValidate = $this->validation($prefix, $_POST['words']);
 
-        // Проверка на пустое поле для ввода слов
-        if (empty($_POST['words'])) {
-            return JsonResponse::render(
-                ResponseConstants::WORDS_INPUT_ERROR_RESPONSE_CODE
-            );
+        // Если есть ошибки, возвращаем
+        if (is_string($resultValidate)) {
+            return $resultValidate;
         }
 
         // Массив слов
@@ -43,6 +37,31 @@ class MainController
             ResponseConstants::SUCCESS_RESPONSE_CODE,
             $filteredWords
         );
+    }
+
+    /**
+     * Выполняет валидацию полей
+     * @param string $prefix
+     * @param string $words
+     * @return string|bool
+     */
+    private function validation(string $prefix, string $words): string|bool
+    {
+        // Проверка на пустое поле префикса
+        if (empty($prefix)) {
+            return JsonResponse::render(
+                ResponseConstants::PREFIX_INPUT_ERROR_RESPONSE_CODE
+            );
+        }
+
+        // Проверка на пустое поле для ввода слов
+        if (empty($words)) {
+            return JsonResponse::render(
+                ResponseConstants::WORDS_INPUT_ERROR_RESPONSE_CODE
+            );
+        }
+
+        return true;
     }
 
     /**
