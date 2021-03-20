@@ -1,5 +1,7 @@
 # Тестовые задания для академии Digital Spectr
 
+<br>
+
 - [Структура заданий](https://github.com/nikechervon/PhpBackend-Base#%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9)
    - [Задание 1](https://github.com/nikechervon/PhpBackend-Base#%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-1)
    - [Задание 2](https://github.com/nikechervon/PhpBackend-Base#%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-2)
@@ -7,6 +9,8 @@
 - [Системные требования окружения](https://github.com/nikechervon/PhpBackend-Base#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B5-%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F)
 - [Архитектурное решение](https://github.com/nikechervon/PhpBackend-Base#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%BD%D0%BE%D0%B5-%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5)
 - [Процесс установки](https://github.com/nikechervon/PhpBackend-Base#%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8)
+
+<br>
 
 ## Структура заданий:
 
@@ -56,19 +60,19 @@
 1. Клонируем проект в корневую папку доменов вашего сервера:
    
    ```shell
-   $ git clone https://github.com/izniburak/php-router.git
+   $ git clone https://github.com/nikechervon/PhpBackend-Base.git
    ```
 <br>
 
-2. Откройте git-bash из корня проекта, и запустите скрипт для установки всех необходимых библиотек:
+2. Запустите скрипт для установки всех необходимых библиотек:
 
    ```shell
-   $ sh ./backend/bash/build.sh
+   $ sh PhpBackend-Base/backend/bash/build.sh
    ```
 <br>
 
 3. Запускайте сервер и переходите к стартовой странице:
 
    ```
-   http://digital-spectr.loc/frontend/
+   http://PhpBackend-Base/frontend/
    ```
