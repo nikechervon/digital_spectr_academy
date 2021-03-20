@@ -74,5 +74,5 @@
 3. Запускайте сервер и переходите к стартовой странице:
 
    ```
-   http://digital-spectr.loc/frontend/
+   http://PhpBackend-Base/frontend/
    ```
