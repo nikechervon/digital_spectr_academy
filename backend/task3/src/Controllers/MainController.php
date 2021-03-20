@@ -18,8 +18,8 @@ class MainController
      */
     public function getSmoothiesCountForHipsters(): string
     {
-        $hipstersCount = htmlspecialchars($_POST['hipstersCount']);
-        $smoothiesCount = htmlspecialchars($_POST['smoothiesCount']);
+        $hipstersCount = (int) htmlspecialchars($_POST['hipstersCount']);
+        $smoothiesCount = (int) htmlspecialchars($_POST['smoothiesCount']);
 
         // Результат валидации
         $resultValidate = $this->validation($hipstersCount, $smoothiesCount);
