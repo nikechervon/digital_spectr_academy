@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Constants\ResponseConstants;
-use App\Renderable;
 use App\Services\YearService;
 use JetBrains\PhpStorm\Pure;
 use App\JsonResponse;
@@ -12,7 +11,7 @@ use App\JsonResponse;
  * Class MainController
  * @package App\Controllers
  */
-class YearController
+class YearController extends BaseController
 {
     /**
      * @var YearService
@@ -51,19 +50,5 @@ class YearController
             // Рендеринг исключения
             return $this->renderException($exception);
         }
-    }
-
-    /**
-     * Возвращает исключение
-     * @param \Exception $exception
-     * @return mixed
-     */
-    private function renderException(\Exception $exception): mixed
-    {
-        if ($exception instanceof Renderable) {
-            return $exception->render();
-        }
-
-        return $exception->getMessage();
     }
 }
