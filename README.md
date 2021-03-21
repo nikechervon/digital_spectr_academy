@@ -60,7 +60,7 @@
 1. Клонируем проект в корневую папку доменов вашего сервера:
    
    ```shell
-   $ git clone https://github.com/nikechervon/digital_spectr_academy.git
+   $ git clone https://github.com/nikechervon/digital_spectr_academy.git digital-spectr.loc
    ```
 <br>
 
